@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import java.net.URI;
+import javax.validation.Valid;
+import org.springframework.validation.BindingResult;
 
 @Controller
 @RequestMapping(path="/api")
@@ -32,7 +34,13 @@ public class MainController {
 
     @PostMapping(path="/big_five_profile_submissions")
     @ResponseBody
-    public ResponseEntity<String> addNewProfile (@RequestBody BigFiveProfile profile) {
+    public ResponseEntity<String> addNewProfile (@Valid @RequestBody BigFiveProfile profile, BindingResult errors) {
+
+        if(errors.hasErrors()){
+            System.out.println("ERROR");
+            return ResponseEntity.status(422).body("UNPROCESSABLE_ENTITY");
+        }
+
         BigFiveProfile n = profile;
         profileRepository.save(n);
         System.out.println("Profile SAVE:\n======\n" + profile.toString());

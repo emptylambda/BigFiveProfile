@@ -1,0 +1,63 @@
+curl -i -X POST \
+  http://localhost:8080/api/big_five_profile_submissions\
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -d '{
+    "NAME": "Jeff",
+    "EMAIL": "jeff@gmail.com",
+    "EXTRAVERSION": {
+        "Overall Score": 78,
+        "Facets": {
+            "Friendliness": 94,
+            "Gregariousness": 72,
+            "Assertiveness": 81,
+            "Activity Level": 70,
+            "Excitement-Seeking": 46,
+            "Cheerfulness": 46
+        }
+    },
+    "AGREEABLENESS": {
+        "Overall Score": 62,
+        "Facets": {
+            "Trust": 51,
+            "Morality": 39,
+            "Altruism": 95,
+            "Cooperation": 11,
+            "Modesty": 55,
+            "Sympathy": 95
+        }
+    },
+    "CONSCIENTIOUSNESS": {
+        "Overall Score": 51,
+        "Facets": {
+            "Self-Efficacy": 52,
+            "Orderliness": 41,
+            "Dutifulness": 8,
+            "Achievement-Striving": 66,
+            "Self-Discipline": 68,
+            "Cautiousness": 64
+        }
+    },
+    "NEUROTICISM": {
+        "Overall Score": 78,
+        "Facets": {
+            "Anxiety": 88,
+            "Anger": 93,
+            "Depression": 79,
+            "Self-Consciousness": 30,
+            "Immoderation": 58,
+            "Vulnerability": 58
+        }
+    },
+    "OPENNESS TO EXPERIENCE": {
+        "Overall Score": 84,
+        "Facets": {
+            "Imagination": 50,
+            "Artistic Interests": 86,
+            "Emotionality": 84,
+            "Adventurousness": 48,
+            "Intellect": 48,
+            "Liberalism": 97
+        }
+    }
+}'

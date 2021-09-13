@@ -44,7 +44,7 @@ public class BigFiveProfile implements Serializable {
     /* misc*/
     @Override
     public String toString(){
-        String representation = this.name + " AT " + this.email;
+        String representation = this.name + " AT " + this.email + "\n";
         for(Domain d : this.domains){
             representation += d.toString() + "\n-----\n";
         }

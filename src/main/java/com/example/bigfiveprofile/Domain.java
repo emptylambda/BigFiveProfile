@@ -31,4 +31,10 @@ public class Domain implements Serializable{
     public Integer getOverallScore() { return this.overallScore; }
     public Dictionary<String, Integer> getFacets() { return this.facets; }
     public void updateOverallScore(Integer overallScore) { this.overallScore = overallScore; }
+    @Override
+    public String toString() {
+        String representation = this.domainName + "\nOverall Score: " + this.overallScore;
+        return representation;
+    }
+
 }
